@@ -1,0 +1,3 @@
+# Ignore temporary Office lock files
+~$*
+assets/~$*
