@@ -223,23 +223,28 @@ document.addEventListener('DOMContentLoaded', function() {
     showCookiePopup();
 
     // ========================================
-    // SEND LEADS TO GOOGLE SHEET (in addition to FormSubmit email)
+    // SEND LEADS TO GOOGLE SHEET, THEN GO TO THANK-YOU PAGE
     // ========================================
 
     const gsheetForms = document.querySelectorAll('.gsheet-form');
-    const isScriptUrlConfigured = GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') !== 0;
 
-    if (isScriptUrlConfigured && gsheetForms.length) {
+    if (gsheetForms.length) {
         gsheetForms.forEach(form => {
-            // مش بنعمل preventDefault عشان الفورم يفضل يبعت الإيميل زي ما هو عن طريق FormSubmit،
-            // وفي نفس الوقت بنبعت نسخة للـ Google Sheet قبل ما الصفحة تتنقل.
-            form.addEventListener('submit', function() {
-                const formData = new FormData(form);
-                if (navigator.sendBeacon) {
-                    navigator.sendBeacon(GOOGLE_SCRIPT_URL, formData);
-                } else {
-                    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formData, keepalive: true });
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
                 }
+
+                const formData = new FormData(form);
+
+                fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData })
+                    .catch(() => {})
+                    .finally(() => {
+                        window.location.href = 'thank-you.html';
+                    });
             });
         });
     }
