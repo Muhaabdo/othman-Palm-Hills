@@ -2,7 +2,42 @@
    Egyptian Realty - Main JavaScript
    ======================================== */
 
+/* رابط Google Apps Script Web App اللي بيسجل بيانات الفورم في Google Sheet.
+   استبدل القيمة دي بالرابط اللي هيطلع لك بعد عمل Deploy (بينتهي بـ /exec). */
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMvi9LP9qXM-SDYyIAZSShJT6gGLOENOd7mxW-yelkYFIh6iTMHbZts8fFcoRs6DxF/exec';
+
+
 document.addEventListener('DOMContentLoaded', function() {
+    // ========================================
+    // GCLID CAPTURE (Google Ads click tracking)
+    // ========================================
+    // بياخد الـ gclid من رابط الصفحة لو المستخدم جاي من إعلان جوجل،
+    // ويحتفظ بيه لحد ما يبعت الفورم حتى لو تصفح الصفحة شوية الأول.
+    const gclidStorageKey = 'gclid';
+    const urlGclid = new URLSearchParams(window.location.search).get('gclid');
+
+    if (urlGclid) {
+        try {
+            localStorage.setItem(gclidStorageKey, urlGclid);
+        } catch (error) {
+        }
+    }
+
+    let storedGclid = urlGclid || '';
+    if (!storedGclid) {
+        try {
+            storedGclid = localStorage.getItem(gclidStorageKey) || '';
+        } catch (error) {
+            storedGclid = '';
+        }
+    }
+
+    if (storedGclid) {
+        document.querySelectorAll('.gclid-field').forEach(field => {
+            field.value = storedGclid;
+        });
+    }
+
     // Navbar Elements
     const hamburger = document.querySelector('.hamburger');
     const navbarMenu = document.querySelector('.navbar-menu');
@@ -17,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalOverlay = document.querySelector('.modal-overlay');
     const modalClose = document.querySelector('.modal-close');
     const modalProjectName = document.querySelector('.modal-project-name');
-    const modalProjectInput = document.querySelector('#project-name');
+    const modalUnitTypeInput = document.querySelector('#unit-type');
 
     const cookiePopup = document.querySelector('#cookie-popup');
     const cookiePopupClose = document.querySelector('#cookie-popup-close');
@@ -86,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Modal Functions
-    const openModal = (projectName = '') => {
+    const openModal = (unitType = '') => {
         if (modal && modalOverlay) {
             modal.classList.add('active');
             modalOverlay.classList.add('active');
@@ -94,11 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (modalProjectName) {
-            modalProjectName.textContent = projectName ? `المشروع: ${projectName}` : '';
+            modalProjectName.textContent = unitType ? `نوع الوحدة: ${unitType}` : '';
         }
 
-        if (modalProjectInput) {
-            modalProjectInput.value = projectName;
+        if (modalUnitTypeInput) {
+            modalUnitTypeInput.value = unitType;
         }
     };
 
@@ -188,19 +223,45 @@ document.addEventListener('DOMContentLoaded', function() {
     showCookiePopup();
 
     // ========================================
+    // SEND LEADS TO GOOGLE SHEET (in addition to FormSubmit email)
+    // ========================================
+
+    const gsheetForms = document.querySelectorAll('.gsheet-form');
+    const isScriptUrlConfigured = GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') !== 0;
+
+    if (isScriptUrlConfigured && gsheetForms.length) {
+        gsheetForms.forEach(form => {
+            // مش بنعمل preventDefault عشان الفورم يفضل يبعت الإيميل زي ما هو عن طريق FormSubmit،
+            // وفي نفس الوقت بنبعت نسخة للـ Google Sheet قبل ما الصفحة تتنقل.
+            form.addEventListener('submit', function() {
+                const formData = new FormData(form);
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(GOOGLE_SCRIPT_URL, formData);
+                } else {
+                    fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formData, keepalive: true });
+                }
+            });
+        });
+    }
+
+    // ========================================
     // LIGHTBOX FUNCTIONALITY
     // ========================================
 
     const galleryImages = [
-        'assets/gallery-1.jpg',
-        'assets/gallery-2.jpg',
-        'assets/gallery-3.jpg',
-        'assets/gallery-4.jpg',
-        'assets/gallery-5.jpg',
-        'assets/gallery-6.jpg',
-        'assets/gallery-7.jpg',
-        'assets/gallery-8.jpg',
-        'assets/gallery-9.jpg'
+        'assets/view1.jpg',
+        'assets/view 4.jpg',
+        'assets/beachfrontvilla2.jpg',
+        'assets/view 2.jpg',
+        'assets/bayline villa.jpg',
+        'assets/view5.jpg',
+        'assets/costal villa.jpg',
+        'assets/view 3.jpg',
+        'assets/twin house 2.jpg',
+        'assets/beachhome.jpg',
+        'assets/junior chalet.jpg',
+        'assets/view 6.jpg',
+        'assets/beachhome2.jpg'
     ];
 
     let currentImageIndex = 0;
