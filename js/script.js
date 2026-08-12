@@ -236,6 +236,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const submitBtn = form.querySelector('button[type="submit"]');
                 if (submitBtn) {
                     submitBtn.disabled = true;
+                    submitBtn.classList.add('is-loading');
+                    submitBtn.dataset.originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<span class="btn-spinner"></span> جاري الإرسال...';
                 }
 
                 const formData = new FormData(form);
