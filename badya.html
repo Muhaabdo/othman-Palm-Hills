@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Badya Palm Hills</title>
+    <meta name="description" content="امتلك وحدتك في Badya من Palm Hills في أكتوبر - مقدم 1.5% وتقسيط حتى 12 سنة، أسعار تبدأ من 7 مليون جنيه.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MX5JVD54');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+        /* ========================================
+           Badya Landing Page - الصفحة مستقلة بالكامل
+           (نفس هوية صفحة index بدون الاعتماد على style.css)
+           ======================================== */
+        :root {
+            --green: #1F3D2B;
+            --green-dark: #0F2A1C;
+            --gold: #C9A24D;
+            --gold-soft: #FFF8E7;
+            --ink: #1C1C1C;
+            --muted: #6B6B6B;
+            --ground: #F7F7F5;
+            --surface: #FFFFFF;
+            --line: #F0F0F0;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1FA852;
+            color-scheme: light;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', 'Poppins', Tahoma, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background-color: var(--ground);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: env(safe-area-inset-top, 0px);
+            background-color: var(--surface);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        header.hide {
+            transform: translateY(-100%);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navbar-menu a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: var(--gold);
+        }
+
+        .navbar-actions,
+        .navbar-contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-whatsapp,
+        .navbar-call {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .navbar-whatsapp { background-color: var(--whatsapp); }
+        .navbar-call { background-color: var(--green); }
+
+        .navbar-whatsapp:hover,
+        .navbar-call:hover {
+            transform: scale(1.08);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: none;
+            border: 0;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--green);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        main {
+            margin-top: calc(70px + env(safe-area-inset-top, 0px));
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 16px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--whatsapp);
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 14px 28px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            animation: btn-whatsapp-pulse 2.4s ease-in-out infinite;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-dark);
+            animation-play-state: paused;
+        }
+
+        .btn-whatsapp i {
+            font-size: 19px;
+        }
+
+        @keyframes btn-whatsapp-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+            50% { box-shadow: 0 0 0 9px rgba(37, 211, 102, 0); }
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 70px);
+            min-height: calc(100svh - 70px);
+            display: flex;
+            align-items: center;
+            background-image: url('assets/badya/hero.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            padding: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(15, 42, 28, 0.55) 0%, rgba(15, 42, 28, 0.75) 60%, rgba(15, 42, 28, 0.9) 100%);
+        }
+
+        /* المساحة السفلية فاضية علشان إشعار الكوكيز ميغطيش أي حاجة */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 56px 24px 150px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(201, 162, 77, 0.7);
+            color: var(--ground);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        .hero-badge i {
+            color: var(--gold);
+        }
+
+        .hero-title {
+            font-size: 46px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            text-wrap: balance;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--ground);
+            margin-bottom: 28px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 14px;
+            padding: 16px 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-stat-label {
+            display: block;
+            font-size: 13px;
+            color: #E9E2CF;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-value {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-stat-value small {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero .btn-whatsapp {
+            font-size: 17px;
+            padding: 16px 36px;
+        }
+
+        /* ---------- Units ---------- */
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            padding: 0 24px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .unit-card {
+            background: var(--surface);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .unit-card-media {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+        }
+
+        .unit-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .unit-card:hover .unit-card-media img {
+            transform: scale(1.06);
+        }
+
+        .unit-card-tag {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--green);
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+
+        .unit-card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .unit-card-title {
+            font-size: 21px;
+            color: var(--green);
+            text-align: center;
+        }
+
+        .unit-card-price {
+            display: grid;
+            gap: 2px;
+            text-align: center;
+            padding: 10px 2px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .unit-card-price-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .unit-card-price-value {
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--green);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .unit-card-price-value small {
+            font-size: 14px;
+            color: var(--gold);
+        }
+
+        .unit-card-specs {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .unit-card-specs li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 14px;
+            color: #4D4D4D;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #EAEAEA;
+        }
+
+        .unit-card-specs li:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .unit-card-specs li span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .unit-card-specs i {
+            color: var(--gold);
+            width: 16px;
+            text-align: center;
+        }
+
+        .unit-card-specs strong {
+            color: var(--green);
+        }
+
+        /* مميزات كل وحدة (Sales points) */
+        .unit-card-points {
+            background: var(--gold-soft);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+
+        .unit-card-points-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+
+        .unit-card-points ul {
+            list-style: none;
+            display: grid;
+            gap: 6px;
+        }
+
+        .unit-card-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13.5px;
+            color: #4D4D4D;
+            line-height: 1.6;
+        }
+
+        .unit-card-points li i {
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        .unit-card-actions {
+            margin-top: auto;
+        }
+
+        .unit-card-actions .btn-whatsapp {
+            width: 100%;
+        }
+
+        .units-disclaimer {
+            max-width: 900px;
+            margin: 32px auto 0;
+            padding: 0 24px;
+            font-size: 12.5px;
+            color: #9A9A9A;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ---------- Why Badya ---------- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            padding: 0 24px;
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 28px;
+            text-align: center;
+            border: 1px solid var(--line);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .why-icon {
+            font-size: 44px;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .why-item h3 {
+            color: var(--green);
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .why-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ---------- Gallery ---------- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            padding: 0 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4 / 3;
+            max-width: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: 0;
+            padding: 0;
+            background: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ---------- Lightbox ---------- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            color: #FFFFFF;
+            background: none;
+            border: 0;
+            font-size: 32px;
+            font-weight: bold;
+            padding: 12px 16px;
+            cursor: pointer;
+        }
+
+        .lightbox-close { top: 16px; right: 20px; font-size: 40px; }
+        .lightbox-prev { top: 50%; left: 12px; transform: translateY(-50%); }
+        .lightbox-next { top: 50%; right: 12px; transform: translateY(-50%); }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            color: var(--gold);
+        }
+
+        /* ---------- Cookie notice ---------- */
+        .cookie-popup {
+            position: fixed;
+            right: 24px;
+            bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+            width: min(420px, calc(100% - 32px));
+            background: var(--surface);
+            border: 1px solid #E7E7E7;
+            border-inline-start: 4px solid var(--gold);
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            padding: 12px 14px 12px 40px;
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        }
+
+        .cookie-popup.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .cookie-popup p {
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: #4D4D4D;
+        }
+
+        .cookie-popup a {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .cookie-popup-close {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            border: 0;
+            background: transparent;
+            color: var(--muted);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background-color: var(--green);
+            color: var(--ground);
+            padding: 60px 0 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-about h3 {
+            font-size: 20px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 17px;
+            margin-bottom: 16px;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-links ul,
+        .footer-contact ul {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .footer-contact i {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        footer a {
+            color: var(--ground);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            background-color: var(--green-dark);
+            padding: 20px 16px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .units-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 16px;
+            }
+
+            .navbar-logo {
+                font-size: 20px;
+            }
+
+            .navbar-menu {
+                position: fixed;
+                left: 0;
+                top: calc(60px + env(safe-area-inset-top, 0px));
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                background-color: var(--surface);
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-menu.active {
+                max-height: 300px;
+            }
+
+            .navbar-menu a {
+                display: block;
+                padding: 20px 16px;
+                border-bottom: 1px solid var(--ground);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-whatsapp,
+            .navbar-call {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+
+            main {
+                margin-top: calc(60px + env(safe-area-inset-top, 0px));
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            .hero {
+                min-height: calc(100vh - 60px);
+                min-height: calc(100svh - 60px);
+            }
+
+            .hero-content {
+                padding: 40px 16px 140px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 8px;
+            }
+
+            .hero-stat {
+                padding: 12px 6px;
+            }
+
+            .hero-stat-label {
+                font-size: 11.5px;
+            }
+
+            .hero-stat-value {
+                font-size: 18px;
+            }
+
+            .hero-stat-value small {
+                font-size: 11px;
+            }
+
+            .hero .btn-whatsapp {
+                width: 100%;
+            }
+
+            .units-grid,
+            .why-grid,
+            .gallery-grid {
+                padding: 0 16px;
+                gap: 16px;
+            }
+
+            .cookie-popup {
+                right: 16px;
+                bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .units-grid,
+            .why-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .units-grid {
+                max-width: 480px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 27px;
+            }
+
+            .hero-stat-value {
+                font-size: 16px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-whatsapp { animation: none; }
+            .unit-card, .why-item, .unit-card-media img, .gallery-item img { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX5JVD54"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="navbar-logo">Egyptian Realty</a>
+
+            <ul class="navbar-menu">
+                <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                <li><a href="disclaimer.html">إخلاء المسؤولية</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+
+            <div class="navbar-actions">
+                <div class="navbar-contact">
+                    <a class="navbar-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Prices" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a class="navbar-call" href="tel:+201113106999" aria-label="اتصل بنا">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+
+                <button type="button" class="hamburger" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-overlay"></div>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-location-dot"></i> 6 أكتوبر · <span dir="ltr">Palm Hills</span></span>
+                <h1 class="hero-title">احجز وحدتك في <span dir="ltr">Badya</span></h1>
+                <p class="hero-description">مدينة ذكية ومستدامة من <span dir="ltr">Palm Hills Developments</span></p>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">أسعار تبدأ من</span>
+                        <span class="hero-stat-value">7 مليون <small>جنيه</small></span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">مقدم يبدأ من</span>
+                        <span class="hero-stat-value">1.5%</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">تقسيط حتى</span>
+                        <span class="hero-stat-value">12 <small>سنة</small></span>
+                    </div>
+                </div>
+
+                <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Prices" target="_blank" rel="noopener">
+                    اعرف الأسعار على واتساب <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Available Units -->
+        <section class="projects" id="projects">
+            <div class="section-header">
+                <h2>الوحدات المتاحة</h2>
+                <p>شقق وتاون هاوس وفيلات في <span dir="ltr">Badya</span> بمقدم 1.5% وتقسيط حتى 12 سنة.</p>
+            </div>
+            <div class="units-grid">
+                <article class="unit-card">
+                    <div class="unit-card-media">
+                        <img src="assets/badya/apartments.png" alt="عمارات الشقق السكنية في Badya" loading="lazy">
+                        <span class="unit-card-tag">1 - 2 - 3 غرف</span>
+                    </div>
+                    <div class="unit-card-body">
+                        <h3 class="unit-card-title" dir="ltr">Apartments</h3>
+                        <p class="unit-card-price">
+                            <span class="unit-card-price-label">أسعار تبدأ من</span>
+                            <span class="unit-card-price-value">7,000,000 <small>جنيه</small></span>
+                        </p>
+                        <ul class="unit-card-specs">
+                            <li><span><i class="fa-solid fa-bed"></i> عدد الغرف</span> <strong>1 ، 2 ، 3 غرف</strong></li>
+                            <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
+                            <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
+                        </ul>
+                        <div class="unit-card-points">
+                            <p class="unit-card-points-title">مميزات الوحدة</p>
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
+                            </ul>
+                        </div>
+                        <div class="unit-card-actions">
+                            <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Apartments%20Prices" target="_blank" rel="noopener">
+                                أسعار الشقق على واتساب <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="unit-card">
+                    <div class="unit-card-media">
+                        <img src="assets/badya/townhouse.webp" alt="وحدات Townhouse في Badya" loading="lazy">
+                        <span class="unit-card-tag">Townhouse</span>
+                    </div>
+                    <div class="unit-card-body">
+                        <h3 class="unit-card-title" dir="ltr">Townhouse</h3>
+                        <p class="unit-card-price">
+                            <span class="unit-card-price-label">أسعار تبدأ من</span>
+                            <span class="unit-card-price-value">21,000,000 <small>جنيه</small></span>
+                        </p>
+                        <ul class="unit-card-specs">
+                            <li><span><i class="fa-solid fa-house"></i> نوع الوحدة</span> <strong dir="ltr">Townhouse</strong></li>
+                            <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
+                            <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
+                        </ul>
+                        <div class="unit-card-points">
+                            <p class="unit-card-points-title">مميزات الوحدة</p>
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
+                            </ul>
+                        </div>
+                        <div class="unit-card-actions">
+                            <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Townhouse%20Prices" target="_blank" rel="noopener">
+                                أسعار التاون هاوس على واتساب <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="unit-card">
+                    <div class="unit-card-media">
+                        <img src="assets/badya/villa.webp" alt="فيلا بحمام سباحة خاص في Badya" loading="lazy">
+                        <span class="unit-card-tag">Villas</span>
+                    </div>
+                    <div class="unit-card-body">
+                        <h3 class="unit-card-title" dir="ltr">Villas</h3>
+                        <p class="unit-card-price">
+                            <span class="unit-card-price-label">أسعار تبدأ من</span>
+                            <span class="unit-card-price-value">24,000,000 <small>جنيه</small></span>
+                        </p>
+                        <ul class="unit-card-specs">
+                            <li><span><i class="fa-solid fa-house-chimney"></i> نوع الوحدة</span> <strong>فيلا مستقلة</strong></li>
+                            <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
+                            <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
+                        </ul>
+                        <div class="unit-card-points">
+                            <p class="unit-card-points-title">مميزات الوحدة</p>
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
+                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
+                            </ul>
+                        </div>
+                        <div class="unit-card-actions">
+                            <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Villas%20Prices" target="_blank" rel="noopener">
+                                أسعار الفيلات على واتساب <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="units-disclaimer">الأسعار والوحدات المعروضة أعلاه استرشادية وقابلة للتغيير أو التحديث في أي وقت دون إشعار مسبق، حسب سياسة الشركة المطوّرة ومدى توافر الوحدات لديها. جميع الصور والمواد الترويجية تخص <span dir="ltr">Palm Hills Developments</span> وتُعرض بغرض التوضيح فقط.</p>
+        </section>
+
+        <!-- Why Badya -->
+        <section class="why-developer" id="why">
+            <div class="section-header">
+                <h2>ليه تشتري في بادية</h2>
+                <p>سواء عايز بيت تسكن فيه أو مستثمر عقاري، <span dir="ltr">Badya</span> هي الاختيار الأنسب في أكتوبر</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fa-solid fa-city why-icon"></i>
+                    <h3>مدينة ذكية ومستدامة</h3>
+                    <p>بادية متصممة كمدينة ذكية متكاملة، فيها خدمات وبنية تحتية حديثة بتسهّل الحياة اليومية لكل السكان.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-leaf why-icon"></i>
+                    <h3>كمبوند صديق للبيئة</h3>
+                    <p>مساحات خضراء واسعة، ممرات للمشي والعجل، وتخطيط بيحترم البيئة ويخلّي الحياة أهدى وأصحّ.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-graduation-cap why-icon"></i>
+                    <h3>منظومة تعليمية ورياضية متكاملة</h3>
+                    <p>مدارس ومرافق رياضية جوه المشروع، علشان كل احتياجات العيلة تكون قريبة منك.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fa-solid fa-chart-line why-icon"></i>
+                    <h3>مطور موثوق وتقسيط حتى 12 سنة</h3>
+                    <p>من <span dir="ltr">Palm Hills</span> صاحبة سجل تسليم قوي، بمقدم يبدأ من 1.5% وتقسيط يصل لـ 12 سنة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery" id="gallery">
+            <div class="section-header">
+                <h2>معرض الصور</h2>
+                <p>استمتع بمشاهدة صور من مشروع <span dir="ltr">Badya</span></p>
+            </div>
+            <div class="gallery-grid">
+                <button type="button" class="gallery-item" data-index="0">
+                    <img src="assets/badya/night-view.png" alt="ممرات المشي والعجل بين العمارات في Badya ليلًا" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="1">
+                    <img src="assets/badya/townhouse-pool.webp" alt="تاون هاوس بحمام سباحة في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="2">
+                    <img src="assets/badya/villa-street.webp" alt="واجهة فيلا وجراج مظلل في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="3">
+                    <img src="assets/badya/villa-garden.webp" alt="فيلا بحديقة وحمام سباحة في Badya" loading="lazy">
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cookie notice: بيختفي بعد 3 ثواني بالظبط -->
+    <div class="cookie-popup" id="cookie-popup" role="status" aria-live="polite">
+        <button type="button" class="cookie-popup-close" id="cookie-popup-close" aria-label="إغلاق الإشعار">×</button>
+        <p>
+            نستخدم ملفات تعريف الارتباط (Cookies) لقياس الأداء وتحسين تجربتك، وفق
+            <a href="privacy.html">سياسة الخصوصية</a>
+            و
+            <a href="disclaimer.html">إخلاء المسؤولية</a>.
+        </p>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="إغلاق">&times;</button>
+        <button type="button" class="lightbox-prev" id="lightbox-prev" aria-label="السابقة">&#10094;</button>
+        <button type="button" class="lightbox-next" id="lightbox-next" aria-label="التالية">&#10095;</button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Egyptian Realty</h3>
+                <p>هي منصة إعلامية وتسويقية مملوكة وتُدار بواسطة وسيط عقاري مستقل، وتهدف إلى عرض وتسويق الفرص السكنية والاستثمارية المتاحة من مطورين عقاريين مختلفين، وذلك لأغراض تعريفية وتسويقية فقط. نلتزم بالشفافية الكاملة، وبسياسات إعلانات جوجل، كما نلتزم بحماية خصوصية بيانات المستخدمين وعدم مشاركتها مع أي طرف ثالث دون موافقة صريحة.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    <li><a href="disclaimer.html">إخلاء المسؤولية</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>بيانات التواصل</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+201113106999">01113106999</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@egyptianrealty.com">info@egyptianrealty.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Egyptian Realty. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ---------- Mobile menu ----------
+            var hamburger = document.querySelector('.hamburger');
+            var navbarMenu = document.querySelector('.navbar-menu');
+            var menuOverlay = document.querySelector('.menu-overlay');
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                navbarMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            }
+
+            hamburger.addEventListener('click', function () {
+                hamburger.classList.toggle('active');
+                navbarMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+            menuOverlay.addEventListener('click', closeMenu);
+            navbarMenu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // ---------- Hide header on scroll down ----------
+            var header = document.querySelector('header');
+            var lastScrollTop = 0;
+            window.addEventListener('scroll', function () {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                header.classList.toggle('hide', scrollTop > lastScrollTop && scrollTop > 80);
+                lastScrollTop = Math.max(scrollTop, 0);
+            });
+
+            // ---------- Cookie notice: يظهر ويختفي بعد 3 ثواني بالظبط ----------
+            var cookiePopup = document.getElementById('cookie-popup');
+            var cookieKey = 'badyaCookieNoticeDismissed';
+            var cookieTimer;
+            var dismissed = false;
+
+            try {
+                dismissed = localStorage.getItem(cookieKey) === 'true';
+            } catch (error) {
+                dismissed = false;
+            }
+
+            function hideCookiePopup() {
+                cookiePopup.classList.remove('active');
+                clearTimeout(cookieTimer);
+                try {
+                    localStorage.setItem(cookieKey, 'true');
+                } catch (error) {
+                }
+            }
+
+            if (!dismissed) {
+                cookiePopup.classList.add('active');
+                cookieTimer = setTimeout(hideCookiePopup, 3000);
+            }
+            document.getElementById('cookie-popup-close').addEventListener('click', hideCookiePopup);
+
+            // ---------- Gallery lightbox ----------
+            var galleryItems = document.querySelectorAll('.gallery-item');
+            var galleryImages = Array.prototype.map.call(galleryItems, function (item) {
+                return item.querySelector('img').getAttribute('src');
+            });
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImage = document.getElementById('lightbox-image');
+            var currentIndex = 0;
+
+            function showImage(index) {
+                currentIndex = (index + galleryImages.length) % galleryImages.length;
+                lightboxImage.src = galleryImages[currentIndex];
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            galleryItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    showImage(parseInt(item.dataset.index, 10));
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+            document.getElementById('lightbox-prev').addEventListener('click', function () { showImage(currentIndex - 1); });
+            document.getElementById('lightbox-next').addEventListener('click', function () { showImage(currentIndex + 1); });
+            lightbox.addEventListener('click', function (event) {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (!lightbox.classList.contains('active')) {
+                    return;
+                }
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+                if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+            });
+        });
+    </script>
+</body>
+</html>
