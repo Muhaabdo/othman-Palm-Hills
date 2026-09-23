@@ -472,40 +472,6 @@
             color: var(--green);
         }
 
-        /* مميزات كل وحدة (Sales points) */
-        .unit-card-points {
-            background: var(--gold-soft);
-            border-radius: 12px;
-            padding: 12px 14px;
-        }
-
-        .unit-card-points-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--green);
-            margin-bottom: 6px;
-        }
-
-        .unit-card-points ul {
-            list-style: none;
-            display: grid;
-            gap: 6px;
-        }
-
-        .unit-card-points li {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 13.5px;
-            color: #4D4D4D;
-            line-height: 1.6;
-        }
-
-        .unit-card-points li i {
-            color: var(--gold);
-            margin-top: 4px;
-        }
-
         .unit-card-actions {
             margin-top: auto;
         }
@@ -570,7 +536,7 @@
         /* ---------- Gallery ---------- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
             padding: 0 24px;
             max-width: 1100px;
@@ -770,7 +736,8 @@
         /* ---------- Responsive ---------- */
         @media (max-width: 1024px) {
             .units-grid,
-            .why-grid {
+            .why-grid,
+            .gallery-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
@@ -890,9 +857,12 @@
 
         @media (max-width: 600px) {
             .units-grid,
-            .why-grid,
-            .gallery-grid {
+            .why-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                gap: 10px;
             }
 
             .units-grid {
@@ -1006,14 +976,6 @@
                             <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
                             <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
                         </ul>
-                        <div class="unit-card-points">
-                            <p class="unit-card-points-title">مميزات الوحدة</p>
-                            <ul>
-                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
-                            </ul>
-                        </div>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Apartments%20Prices" target="_blank" rel="noopener">
                                 أسعار الشقق على واتساب <i class="fa-brands fa-whatsapp"></i>
@@ -1038,14 +1000,6 @@
                             <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
                             <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
                         </ul>
-                        <div class="unit-card-points">
-                            <p class="unit-card-points-title">مميزات الوحدة</p>
-                            <ul>
-                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
-                            </ul>
-                        </div>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Townhouse%20Prices" target="_blank" rel="noopener">
                                 أسعار التاون هاوس على واتساب <i class="fa-brands fa-whatsapp"></i>
@@ -1070,14 +1024,6 @@
                             <li><span><i class="fa-solid fa-hand-holding-dollar"></i> المقدم</span> <strong>1.5%</strong></li>
                             <li><span><i class="fa-solid fa-calendar-check"></i> التقسيط</span> <strong>حتى 12 سنة</strong></li>
                         </ul>
-                        <div class="unit-card-points">
-                            <p class="unit-card-points-title">مميزات الوحدة</p>
-                            <ul>
-                                <li><i class="fa-solid fa-circle-check"></i> جوه مدينة ذكية ومستدامة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> كمبوند صديق للبيئة</li>
-                                <li><i class="fa-solid fa-circle-check"></i> منظومة تعليمية ورياضية متكاملة</li>
-                            </ul>
-                        </div>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Badya%20Villas%20Prices" target="_blank" rel="noopener">
                                 أسعار الفيلات على واتساب <i class="fa-brands fa-whatsapp"></i>
@@ -1137,6 +1083,18 @@
                 </button>
                 <button type="button" class="gallery-item" data-index="3">
                     <img src="assets/badya/villa-garden.webp" alt="فيلا بحديقة وحمام سباحة في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="4">
+                    <img src="assets/badya/hero.jpg" alt="عمارات وحدائق ونافورة في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="5">
+                    <img src="assets/badya/apartments.png" alt="عمارات الشقق السكنية في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="6">
+                    <img src="assets/badya/townhouse.webp" alt="وحدات Townhouse في Badya" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-index="7">
+                    <img src="assets/badya/villa.webp" alt="فيلا بحمام سباحة خاص في Badya" loading="lazy">
                 </button>
             </div>
         </section>
