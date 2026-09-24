@@ -519,10 +519,48 @@
 
         .unit-card-actions {
             margin-top: auto;
+            display: flex;
+            gap: 10px;
         }
 
         .unit-card-actions .btn-whatsapp {
-            width: 100%;
+            flex: 1 1 auto;
+            min-width: 0;
+            padding: 13px 12px;
+            gap: 8px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .unit-card-actions .btn-whatsapp i {
+            font-size: 17px;
+        }
+
+        .btn-call {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            border: 1.5px solid var(--green);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--green);
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-call i {
+            font-size: 17px;
+        }
+
+        .btn-call:hover {
+            background: var(--green);
+            color: #FFFFFF;
         }
 
         .units-disclaimer {
@@ -792,6 +830,179 @@
             opacity: 0.9;
         }
 
+        /* ---------- Hero secondary link ---------- */
+        .hero-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .hero-link:hover {
+            color: var(--gold);
+        }
+
+        /* ---------- Lead form ---------- */
+        .lead {
+            background: linear-gradient(135deg, var(--green-dark), var(--green));
+            color: #FFFFFF;
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px;
+            align-items: center;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .lead-text h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .lead-text > p {
+            opacity: 0.85;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .lead-benefits {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .lead-benefits li {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .lead-benefits i {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .lead-form {
+            background: var(--surface);
+            color: var(--ink);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            display: grid;
+            gap: 16px;
+        }
+
+        .lead-form h3 {
+            color: var(--green);
+            font-size: 20px;
+        }
+
+        .lead-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .lead-form input,
+        .lead-form select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid #E2E2DE;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            background: #FFFFFF;
+            color: var(--ink);
+        }
+
+        .lead-form input:focus,
+        .lead-form select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .lead-submit {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--gold);
+            color: var(--green-dark);
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: filter 0.2s ease;
+        }
+
+        .lead-submit:hover {
+            filter: brightness(1.07);
+        }
+
+        .lead-submit:disabled {
+            opacity: 0.75;
+            cursor: wait;
+        }
+
+        .lead-terms {
+            font-size: 12.5px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .lead-terms a {
+            color: var(--green);
+        }
+
+        .lead-error {
+            background: #FDECEC;
+            color: #A12626;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 13.5px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .lead-error a {
+            color: #A12626;
+            font-weight: 700;
+        }
+
+        .lead-error[hidden] {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .lead-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .lead-grid {
+                padding: 0 16px;
+            }
+
+            .lead-text h2 {
+                font-size: 24px;
+            }
+
+            .lead-form {
+                padding: 22px 18px;
+            }
+        }
+
         /* ---------- Responsive ---------- */
         @media (max-width: 1024px) {
             .why-grid,
@@ -1017,6 +1228,8 @@
                 <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Palm%20Hills%20Projects%20Prices" target="_blank" rel="noopener">
                     اعرف الأسعار على واتساب <i class="fa-brands fa-whatsapp"></i>
                 </a>
+                <br>
+                <a class="hero-link" href="#contact">أو سيب رقمك ونكلمك بالأسعار</a>
             </div>
         </section>
 
@@ -1054,8 +1267,9 @@
                         <p class="unit-card-point" dir="ltr"><i class="fa-solid fa-circle-check"></i> In the heart of Palm Hills October</p>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20PX%20Prices" target="_blank" rel="noopener">
-                                تفاصيل أكثر على واتساب <i class="fa-brands fa-whatsapp"></i>
+                                تفاصيل أكثر <i class="fa-brands fa-whatsapp"></i>
                             </a>
+                            <a class="btn-call" href="tel:+201113106999" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1086,8 +1300,9 @@
                         <p class="unit-card-point" dir="ltr"><i class="fa-solid fa-circle-check"></i> Luxurious villas compound</p>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%2097%20Hills%20New%20Cairo%20Prices" target="_blank" rel="noopener">
-                                تفاصيل أكثر على واتساب <i class="fa-brands fa-whatsapp"></i>
+                                تفاصيل أكثر <i class="fa-brands fa-whatsapp"></i>
                             </a>
+                            <a class="btn-call" href="tel:+201113106999" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1117,8 +1332,9 @@
                         <p class="unit-card-point" dir="ltr"><i class="fa-solid fa-circle-check"></i> Very prime location in R4</p>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Village%20de%20la%20Capitale%20Prices" target="_blank" rel="noopener">
-                                تفاصيل أكثر على واتساب <i class="fa-brands fa-whatsapp"></i>
+                                تفاصيل أكثر <i class="fa-brands fa-whatsapp"></i>
                             </a>
+                            <a class="btn-call" href="tel:+201113106999" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
                         </div>
                     </div>
                 </article>
@@ -1146,8 +1362,9 @@
                         <p class="unit-card-point" dir="ltr"><i class="fa-solid fa-circle-check"></i> Prime location in New Cairo</p>
                         <div class="unit-card-actions">
                             <a class="btn-whatsapp" href="https://wa.me/201113106999?text=I'm%20interested%20in%20Palm%20Hills%20New%20Cairo%20Prices" target="_blank" rel="noopener">
-                                تفاصيل أكثر على واتساب <i class="fa-brands fa-whatsapp"></i>
+                                تفاصيل أكثر <i class="fa-brands fa-whatsapp"></i>
                             </a>
+                            <a class="btn-call" href="tel:+201113106999" aria-label="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
                         </div>
                     </div>
                 </article>            </div>
@@ -1217,6 +1434,50 @@
                     <img src="assets/palm-hills-new-cairo/townhouses.webp" alt="صف تاون هاوس في Palm Hills New Cairo" loading="lazy">
                     <span class="gallery-caption" dir="ltr">Palm Hills New Cairo</span>
                 </button>            </div>
+        </section>
+
+        <!-- Lead form -->
+        <section class="lead" id="contact">
+            <div class="lead-grid">
+                <div class="lead-text">
+                    <h2>سيب بياناتك واعرف أحدث أسعار مشاريع <span dir="ltr">Palm Hills</span></h2>
+                    <p>فريقنا هيكلمك في أقرب وقت ويساعدك تختار المشروع والوحدة المناسبة ليك.</p>
+                    <ul class="lead-benefits">
+                        <li><i class="fa-solid fa-circle-check"></i> أحدث قائمة أسعار للوحدات المتاحة</li>
+                        <li><i class="fa-solid fa-circle-check"></i> مقارنة بين المشاريع وخطط السداد</li>
+                        <li><i class="fa-solid fa-circle-check"></i> ترشيح الوحدة المناسبة لميزانيتك</li>
+                        <li><i class="fa-solid fa-circle-check"></i> ترتيب زيارة للموقع</li>
+                    </ul>
+                </div>
+                <form class="lead-form gsheet-form">
+                    <h3>اطلب الأسعار الآن</h3>
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="project" value="Palm Hills Projects">
+                    <input type="hidden" name="gclid" class="gclid-field" value="">
+                    <div>
+                        <label for="lead-name">الاسم</label>
+                        <input id="lead-name" type="text" name="name" placeholder="أدخل اسمك" autocomplete="name" required>
+                    </div>
+                    <div>
+                        <label for="lead-phone">رقم التليفون</label>
+                        <input id="lead-phone" type="tel" name="phone" placeholder="010xxxxxxxx" autocomplete="tel" inputmode="tel" required>
+                    </div>
+                    <div>
+                        <label for="lead-unit">المشروع اللي يهمك</label>
+                        <select id="lead-unit" name="unit_type" required>
+                            <option value="" disabled selected>اختر المشروع</option>
+                            <option value="PX">PX</option>
+                            <option value="97 Hills New Cairo">97 Hills New Cairo</option>
+                            <option value="Village de la Capitale">Village de la Capitale</option>
+                            <option value="Palm Hills New Cairo">Palm Hills New Cairo</option>
+                            <option value="استفسار عام">استفسار عام</option>
+                        </select>
+                    </div>
+                    <p class="lead-error" role="alert" hidden>حصلت مشكلة في الإرسال، جرّب تاني أو <a href="https://wa.me/201113106999?text=I'm%20interested%20in%20Palm%20Hills%20Projects%20Prices" target="_blank" rel="noopener">كلمنا واتساب</a></p>
+                    <button type="submit" class="lead-submit">اطلب الأسعار</button>
+                    <p class="lead-terms">بالضغط على "اطلب الأسعار"، أنت توافق على <a href="privacy.html">سياسة الخصوصية</a> وشروط استخدام الموقع.</p>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -1334,6 +1595,69 @@
                 cookieTimer = setTimeout(hideCookiePopup, 3000);
             }
             document.getElementById('cookie-popup-close').addEventListener('click', hideCookiePopup);
+
+            // ---------- GCLID capture ----------
+            var gclid = new URLSearchParams(window.location.search).get('gclid') || '';
+            try {
+                if (gclid) {
+                    localStorage.setItem('gclid', gclid);
+                } else {
+                    gclid = localStorage.getItem('gclid') || '';
+                }
+            } catch (error) {
+            }
+            if (gclid) {
+                document.querySelectorAll('.gclid-field').forEach(function (field) {
+                    field.value = gclid;
+                });
+            }
+
+            // ---------- Lead form -> Google Sheet -> thank-you page ----------
+            var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMvi9LP9qXM-SDYyIAZSShJT6gGLOENOd7mxW-yelkYFIh6iTMHbZts8fFcoRs6DxF/exec';
+            document.querySelectorAll('.gsheet-form').forEach(function (form) {
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var errorBox = form.querySelector('.lead-error');
+                var originalText = submitBtn.textContent;
+
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    // honeypot: البوتات بس اللي بتملى الخانة المخفية
+                    if (form.querySelector('[name="_honey"]').value) {
+                        window.location.href = 'thank-you.html';
+                        return;
+                    }
+
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'جاري الإرسال...';
+                    errorBox.hidden = true;
+
+                    var controller = window.AbortController ? new AbortController() : null;
+                    var timer = setTimeout(function () {
+                        if (controller) controller.abort();
+                    }, 15000);
+
+                    fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        signal: controller ? controller.signal : undefined
+                    })
+                        .then(function (response) { return response.json(); })
+                        .then(function (data) {
+                            clearTimeout(timer);
+                            if (!data || data.result !== 'success') {
+                                throw new Error('Lead not saved');
+                            }
+                            window.location.href = 'thank-you.html';
+                        })
+                        .catch(function () {
+                            clearTimeout(timer);
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                            errorBox.hidden = false;
+                        });
+                });
+            });
 
             // ---------- Gallery lightbox ----------
             var galleryItems = document.querySelectorAll('.gallery-item');
